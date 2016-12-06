@@ -74,7 +74,7 @@ def run_battle(battle_name):
     '''
 
     command = command.replace("{{battle}}", battle_name)
-    command = command.replace("{{result}}", BATTLE_RESULT_DIR + "/" + battle_name + ".result")
+    command = command.replace("{{result}}", BATTLE_RESULT_DIR + "/" + battle_name + "_result.txt")
     os.system(command)
 
 
