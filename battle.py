@@ -10,10 +10,12 @@ import time
 
 ROBOCODE_PATH=sys.argv[1]
 ROBOT_REPO_LIST=sys.argv[2]
+BATTLE_RESULT_DIR=sys.argv[3]
 GIT_CLONE_DIR = ROBOCODE_PATH + "/.robot_repos"
 REPO_ROBOT_DELIM = "#"
 ROBOT_DELIM = ","
 BATTLE_TEMPLATE_REPLACE_STRING = "{{ROBOTS}}"
+
 
 challengers_config = [line.rstrip('\n') for line in open(ROBOT_REPO_LIST)]
 battle_template = open("battle_template.properties", "r").read()
@@ -68,11 +70,11 @@ def run_battle(battle_name):
     command = '''java -Xmx512M -Dsun.io.useCanonCaches=false \
      -cp libs/robocode.jar robocode.Robocode  -nodisplay \
      -battle battles/{{battle}} \
-     -results results/{{result}}
+     -results {{result}}
     '''
 
     command = command.replace("{{battle}}", battle_name)
-    command = command.replace("{{result}}", battle_name + ".result")
+    command = command.replace("{{result}}", BATTLE_RESULT_DIR + "/" + battle_name + ".result")
     os.system(command)
 
 
