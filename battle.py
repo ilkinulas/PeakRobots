@@ -22,14 +22,16 @@ def clone_repos():
     os.system("rm -rf " + GIT_CLONE_DIR)
     os.system("mkdir " + GIT_CLONE_DIR)
     os.chdir(GIT_CLONE_DIR)
+    index = 1
     for line in challengers_config:
-        os.system("git clone " + line.split(REPO_ROBOT_DELIM)[0])
+        os.system("git clone " + line.split(REPO_ROBOT_DELIM)[0] + " " + GIT_CLONE_DIR + "/" + str(index))
+        index = index + 1
 
 def build_robots():
     os.chdir(GIT_CLONE_DIR)
-    subdirs = [name for name in os.listdir(".") if os.path.isdir(name) and not name.startswith('.')]
+    subdirs = [os.path.abspath(name) for name in os.listdir(".") if os.path.isdir(name) and not name.startswith('.')]
     for subdir in subdirs:
-        os.chdir(os.path.abspath(subdir))
+        os.chdir(subdir)
         os.system("./gradlew clean jar")
 
 def copy_robots():
