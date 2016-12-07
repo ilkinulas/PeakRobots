@@ -1,3 +1,4 @@
 https://github.com/ilkinulas/PeakRobots.git#peakrobots.ilkin.Altay
 https://github.com/erkangur/PeakRobots#peakrobots.ilkin.Jug
 https://github.com/sercangedik/robocode#peakrobots.sercan.Tesla
+https://github.com/ccavusoglu/RoboJagdtiger#robojagdtiger.Jagdtiger
