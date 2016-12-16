@@ -2,3 +2,4 @@ https://github.com/ilkinulas/PeakRobots.git#peakrobots.ilkin.AltayAdvanced
 https://github.com/sercangedik/robocode#peakrobots.sercan.Tesla
 https://github.com/ccavusoglu/RoboJagdtiger#robojagdtiger.Jagdtiger
 https://github.com/erkangur/Nutzbot#NutzBot
+https://github.com/AlicanHasirci/alican-robocode#peakrobots.alican.Acheron
